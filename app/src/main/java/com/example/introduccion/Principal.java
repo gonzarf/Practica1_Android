@@ -18,4 +18,6 @@ public class Principal extends AppCompatActivity {
         Intent nIntent = new Intent(Principal.this, MainActivity.class);
         startActivity(nIntent);
     }
+
+
 }
