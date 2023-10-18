@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -42,13 +43,12 @@ public class Show extends AppCompatActivity {
 
                 //CREAMOS UN TEXTVIEW DONDE SE MUIESTREN LOS DATOS
                 TextView data = new TextView(this);
-                data.
-                data.setText("Nombre: " + name + " Email: " + email);
+                data.setPadding(100,0,100,0); //PARA QUE EL TEXTO DENTRO DEL TEXTVIEW SALGA CENTRADO
+                data.setText("Nombre: " + name + "   Email: " + email);
                 layout.addView(data); //INTRODUCIMOS EL TEXTVIEW CREADO EN EL LAYOUT
 
             }while(cursor.moveToNext());
         }
-
         db.close();
     }
 
