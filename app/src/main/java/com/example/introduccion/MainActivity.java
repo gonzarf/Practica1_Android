@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }else{
                 Toast.makeText(this, "Error al insertar dartos", Toast.LENGTH_SHORT).show();
             }
+            db.close();
         }
     }
 }
