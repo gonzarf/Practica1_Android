@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.Ach2290.firstdesign.R;
 import com.example.introduccion.Database.DatabaseAux;
 
 public class MainActivity extends AppCompatActivity {
