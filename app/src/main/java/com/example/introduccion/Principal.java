@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.Ach2290.firstdesign.R;
+
 public class Principal extends AppCompatActivity {
 
     @Override

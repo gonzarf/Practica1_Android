@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "483870952873",
+    "project_id": "soccerscout-10a0b",
+    "storage_bucket": "soccerscout-10a0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483870952873:android:2481a9e9ef5889fada48b8",
+        "android_client_info": {
+          "package_name": "com.example.introduccion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWM40YxQyoiohyMxQ1EcW98m61i4Lf5LE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

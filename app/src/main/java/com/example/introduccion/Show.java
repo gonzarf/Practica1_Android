@@ -1,5 +1,6 @@
 package com.example.introduccion;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,13 +8,21 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.Ach2290.firstdesign.R;
 import com.example.introduccion.Database.DatabaseAux;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Show extends AppCompatActivity {
 
@@ -60,7 +69,7 @@ public class Show extends AppCompatActivity {
         String nameString = nameView.getText().toString();
         String emailString = emailView.getText().toString();
 
-        SQLiteDatabase db = new DatabaseAux(this).getWritableDatabase();
+       /* SQLiteDatabase db = new DatabaseAux(this).getWritableDatabase();
 
         if (db != null && !nameString.isEmpty() && !emailString.isEmpty()){
             long res = db.delete(
@@ -79,6 +88,27 @@ public class Show extends AppCompatActivity {
         }else {
             Toast.makeText(this, "Error al acceder. La base de datos está vacía", Toast.LENGTH_SHORT).show();
         }
-        db.close();
+        db.close();*/
+
+        FirebaseFirestore firestoredb = FirebaseFirestore.getInstance();
+        Map<String, Object> users = new HashMap<>();
+        users.put("correo", "g@g.com" );
+        users.put("nombre", "alv" );
+        firestoredb.collection("SoccerScout").document(nameString)
+                .set(users)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d("DEBUG", "TODO OK");
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("ERROR", e.getMessage());
+                    }
+                });
+
     }
 }
