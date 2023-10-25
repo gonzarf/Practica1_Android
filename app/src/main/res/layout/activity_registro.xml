@@ -7,4 +7,50 @@
     tools:context=".Registro"
     android:background="#F5F5DC">
 
+    <ImageView
+        android:layout_width="187dp"
+        android:layout_height="111dp"
+        app:layout_constraintBottom_toTopOf="@id/guiaHLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guiaV2Logo"
+        app:layout_constraintStart_toEndOf="@id/guiaV1Logo"
+        android:src="@drawable/logo">
+
+    </ImageView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiaHLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20">
+
+    </androidx.constraintlayout.widget.Guideline>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiaV1Logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10">
+
+    </androidx.constraintlayout.widget.Guideline>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiaV2Logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90">
+
+    </androidx.constraintlayout.widget.Guideline>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

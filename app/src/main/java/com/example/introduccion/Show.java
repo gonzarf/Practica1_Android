@@ -1,5 +1,6 @@
 package com.example.introduccion;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -14,6 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.introduccion.Database.DatabaseAux;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Show extends AppCompatActivity {
 
@@ -52,33 +60,9 @@ public class Show extends AppCompatActivity {
         db.close();
     }
 
-    public void delete(View view){
 
-        TextView nameView = findViewById(R.id.deleteName);
-        TextView emailView = findViewById(R.id.deleteEmail);
 
-        String nameString = nameView.getText().toString();
-        String emailString = emailView.getText().toString();
 
-        SQLiteDatabase db = new DatabaseAux(this).getWritableDatabase();
 
-        if (db != null && !nameString.isEmpty() && !emailString.isEmpty()){
-            long res = db.delete(
-                    "users",
-                    "name = '" + nameString + "' and email = '" + emailString + "'",
-                    null);
 
-            if (res > 0){
-                Toast.makeText(this, "SE HAN BORADO LOS DATOS CORRECTAMENTE", Toast.LENGTH_SHORT).show();
-
-                nameView.setText(" ");
-                emailView.setText(" ");
-            }else{
-                Toast.makeText(this, "SE HA PRODUCIDO UN ERROR", Toast.LENGTH_SHORT).show();
-            }
-        }else {
-            Toast.makeText(this, "Error al acceder. La base de datos está vacía", Toast.LENGTH_SHORT).show();
-        }
-        db.close();
-    }
 }

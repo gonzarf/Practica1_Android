@@ -126,7 +126,7 @@
         app:layout_constraintGuide_percent="0.82" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/logo"
         android:layout_width="187dp"
         android:layout_height="111dp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVFoto2"
@@ -154,7 +154,7 @@
         android:layout_width="200dp"
         android:layout_height="0dp"
         android:backgroundTint="#36707C"
-        android:onClick="insertValues"
+        android:onClick="delete"
         android:text="ENTRAR"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintStart_toStartOf="@+id/guidelineVFoto"
