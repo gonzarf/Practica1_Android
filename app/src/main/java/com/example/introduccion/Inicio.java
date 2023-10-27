@@ -20,7 +20,7 @@ public class Inicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        ImageView logoSplash = findViewById(R.id.logoSplash);
+
         TextView appNameSplash = findViewById(R.id.appNameSplah);
         Animation fadeAnimation = AnimationUtils.loadAnimation(this,R.anim.fade_in);
         logoSplash.startAnimation(fadeAnimation);

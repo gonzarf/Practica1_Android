@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5DC"
-    tools:context=".MainActivity">
+    tools:context="com.example.introduccion.MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHFoto"
